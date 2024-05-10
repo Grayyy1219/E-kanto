@@ -1,0 +1,121 @@
+* {
+    scroll-behavior: smooth;
+    transition: all 0.2s ease-in-out;
+    max-width: 99vw;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f6e4;
+    color: #333;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Adjusted for responsiveness */
+    max-width: 600px; /* Added max-width for larger screens */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 150px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    display: inline-block;
+    
+    box-sizing: border-box;
+}
+.itemimage, select, input[type="file"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4fae37;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #234e18;
+    transform: scale(1.05);
+}
+
+#item-image {
+    display: none;
+}
+
+#item-image-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4fae37;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#item-image-label:hover {
+    background-color: #234e18;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4fae37;
+    color: #fff;
+}
+
+#products-container table {
+    border-spacing: 30px 5px;
+}
+/* Add this to your CSS */
+#product-name {
+    width: 100%; /* You can adjust the width as needed */
+    height: 35px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+input[type="file"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px; /* Adjust the font size as needed */
+}

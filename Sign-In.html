@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="E-kanto.css">
+    <script>
+        const alertMessage = decodeURIComponent(new URLSearchParams(window.location.search).get('alert'));
+        if (alertMessage) {
+            alert(alertMessage);
+        }
+    </script>
+</head>
+
+<body>
+    <a href="Landing-Page.html">
+        <img src="logo.png" alt="" class="headLogo">
+    </a>
+    <div class="container">
+        <div class="box">
+            <div class="input">
+                <h1>Sign In</h1>
+                <form action="signin_process.php" method="post">
+                    <b>Email</b><input type="email" name="email" class="Semail" required>
+                    <b>Password</b><input type="password" name="password" class="Spass" required>
+                    <button type="submit">Sign In</button>
+                </form>
+                <p>Forgot your password? <a href="Forgotpass.html">Reset it</a></p>
+                <p>Don't have an account? <a href="Sign-Up.html">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <a href="" class="link">Conditions of Use</a>
+        <a href="" class="link">Privacy Notice</a>
+        <a href="" class="link">Help</a>
+        <br>
+        © 1996-2023, E-kanto or its affiliate
+    </footer>
+</body>
+
+</html>

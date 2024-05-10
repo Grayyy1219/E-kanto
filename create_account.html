@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="createcss.css">
+<div class="container"><!-- Add the action attribute to the form to specify the PHP script -->
+    <form id="createAccountForm" action="create_account.php" method="post" enctype="multipart/form-data">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="middleName">Middle Name:</label>
+    <input type="text" id="middleName" name="middleName">
+
+    <label for="profilePicture">Profile Picture:</label>
+    <input type="file" id="profilePicture" name="profilePicture">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="text" id="contactNumber" name="contactNumber">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Create Account</button>
+</form>
+</div>

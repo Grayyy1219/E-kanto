@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    <link rel="stylesheet" href="createcss.css">
+    <!-- Add your styles or include external stylesheets here -->
+</head>
+
+<body>
+    <div class="container">
+        <div id="editAccountForm">
+            <!-- Display customer details here -->
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName">
+
+            <label for="profilePicture">Profile Picture:</label>
+            <input type="file" id="profilePicture" name="profilePicture">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" id="contactNumber" name="contactNumber">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" onclick="updateDatabase()">Save Changes</button>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch customer details and populate the form
+            fetchCustomerDetails();
+        });
+
+        function fetchCustomerDetails() {
+            // Get the customerId from the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var customerId = urlParams.get('customerId');
+
+            // Make a fetch request to get_customer_details.php or your endpoint
+            fetch("get_customer_details.php?customerId=" + customerId)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Populate the form fields with the retrieved data
+                    document.getElementById("firstName").value = data.first_name;
+                    document.getElementById("lastName").value = data.last_name;
+                    document.getElementById("middleName").value = data.middle_name;
+                    document.getElementById("email").value = data.email_address;
+                    document.getElementById("contactNumber").value = data.contact_number;
+                    // Add similar lines for other fields
+                })
+                .catch(error => {
+                    console.error("Error fetching customer details:", error);
+                });
+        }
+
+        // Add event listener for form submission to handle the update
+        document.getElementById("editAccountForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Call a function to handle the update (e.g., updateDatabase)
+            updateDatabase();
+        });
+
+        function updateDatabase() {
+            // Get the customerId from the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            var customerId = urlParams.get('customerId');
+
+            // Get updated data from the form fields
+            var updatedData = {
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                middleName: document.getElementById("middleName").value,
+                email: document.getElementById("email").value,
+                contactNumber: document.getElementById("contactNumber").value,
+                // Add similar lines for other fields
+            };
+
+            // Make a fetch request to your server to update the database
+            fetch("update_customer.php?customerId=" + customerId, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Handle the response, e.g., show a success message
+                    console.log(data);
+
+                    // Check if the update was successful
+                    if (data.status === 'success') {
+                        // Redirect to the admin page
+                        window.location.href = 'Admin_Panel.php';
+                    } else {
+                        // Handle other cases if needed
+                    }
+                })
+                .catch(error => {
+                    console.error("Error updating customer details:", error);
+                });
+        }
+    </script>
+</body>
+
+</html>

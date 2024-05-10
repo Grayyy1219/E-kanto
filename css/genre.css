@@ -1,0 +1,65 @@
+.colitem {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.items {
+  display: flex;
+  gap: 40px;
+  margin: 20px;
+  cursor: pointer;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.itembox>h3 {
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  margin-top: 10px;
+}
+
+.itembox img {
+  object-fit: cover;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.itembox:hover>.itemimg {
+  box-shadow: 0px 0px 10px 5px #00000044;
+  opacity: 0.9;
+}
+
+.itembox>p,
+.itembox>div>p {
+  font-size: 12px;
+  color: gray;
+}
+
+.itembox:hover {
+  transform: scale(1.03);
+}
+
+.itembox:hover>.itemimg {
+  box-shadow: 0px 0px 10px 5px #00000044;
+  opacity: 0.9;
+}
+
+.itembox>p,
+.itembox>div>p {
+  font-size: 12px;
+  color: gray;
+}
+
+.itembox {
+  display: flex;
+  width: 200px;
+background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 0px 7px 0px #00000044;
+  border-radius: 20px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}

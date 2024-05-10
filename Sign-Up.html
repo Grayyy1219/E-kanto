@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="E-kanto.css">
+</head>
+
+<body>
+    <a href="Landing-Page.html">
+        <img src="logo.png" alt="" class="headLogo">
+    </a>
+    <div class="container">
+        <div class="box">
+            <div class="input">
+                <form action="verifyprocess.php" method="post">
+                    <h1>Create Account</h1>
+                    <b>Last Name</b><input type="text" name="lastName" class="Sname" required>
+                    <b>First Name</b><input type="text" name="firstName" class="Sname" required>
+                    <b>Middle Name</b><input type="text" name="middleName" class="Sname">
+                    <b>Email</b><input type="email" name="emailAddress" class="Semail" required>
+                    <b>Contact Number</b><input type="text" name="number" class="Snumber" required>
+                    <b>Password</b><input type="password" placeholder="At least 6 characters" name="password"
+                        class="Spass" required minlength="6">
+                    <b>Confirm Password</b><input type="password" name="c_password" class="SConfirmpass" required>
+                    <button type="submit" name="submit">Continue</button>
+                </form>
+            </div>
+            <p>By creating an account, you agree to E-Kanto's <a href="#">Conditions of Use</a> and <a
+                    href="#">Privacy Notice</a>.</p><br>
+            Already have an account? <a href="Sign-In.html">Sign in</a>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <a href="#" class="link">Conditions of Use</a>
+    <a href="#" class="link">Privacy Notice</a>
+    <a href="#" class="link">Help</a>
+    <br>© 1996-2023, E-kanto or its affiliate
+</footer>
+
+</html>

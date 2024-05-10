@@ -1,0 +1,71 @@
+.user-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.delete {
+    padding: 10px;
+    cursor: pointer;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.Signup {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+#delete {
+    margin-top: 10px;
+    display: flex;
+    width: 74%;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.edit {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.user-table th {
+    background-color: #f2f2f2;
+}
+
+.block-btn,
+.unblock-btn {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #3498db;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.block-btn:hover,
+.unblock-btn:hover {
+    background-color: #3498db;
+    color: white;
+}

@@ -1,0 +1,104 @@
+#container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+    background-color: #f8fcfb;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#addBook,
+#deleteBook,
+#updateBook {
+    width: 30%;
+
+    margin: 0 10px;
+    background-color: #71a0a5;
+}
+
+table,
+th,
+td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 80%;
+    height: auto;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+.top-left-button {
+
+    top: 20px;
+    left: 180px;
+    padding: 10px;
+    background-color: #2c786c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.return-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.return-button:hover {
+    background-color: #c0392b;
+}
+
+.returned-book {
+    background-color: #d3d3d3;
+    /* Use the desired gray color */
+}
+
+.payment-successful {
+    display: none;
+    /* Hide the row with successful payment */
+}
+
+.remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.remove-button:hover {
+    background-color: #c0392b;
+}
+
+.removed-book {
+    background-color: red;
+    /* Light black background color */
+}
+
+h2 {
+    font-size: 30px;
+}

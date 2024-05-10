@@ -1,0 +1,66 @@
+ .payment-container {
+     width: 50%;
+     border: 2px solid #ccc;
+     border-radius: 10px;
+     padding: 20px;
+     box-sizing: border-box;
+     margin-top: 70px;
+ }
+
+ .form-group label {
+     margin-bottom: 5px;
+     font-weight: bold;
+ }
+
+ .form-group input {
+     padding: 8px;
+     font-size: 16px;
+ }
+
+ .payment-button {
+     margin-top: 20px;
+     text-align: right;
+ }
+
+ label {
+     display: block;
+     font-size: 16px;
+     margin-bottom: 8px;
+ }
+
+ select {
+     width: 100%;
+     padding: 10px;
+     font-size: 16px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     box-sizing: border-box;
+ }
+
+ .checkout-container {
+     width: 40%;
+     border: 2px solid #ccc;
+     border-radius: 10px;
+     padding: 20px;
+     box-sizing: border-box;
+     margin-top: 20px;
+ }
+
+ .item-summary {
+     display: flex;
+     align-items: center;
+     margin-bottom: 5px;
+     border: 1px solid #ddd;
+     padding: 10px;
+     gap: 10px;
+ }
+
+ .item-image {
+     width: 80px;
+     margin-right: 10px;
+ }
+
+ .checkout-button {
+     margin-top: 20px;
+     text-align: right;
+ }

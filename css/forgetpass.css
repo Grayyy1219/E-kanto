@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    filter: blur(2px);
+    filter: grayscale(30%);
+    overflow: hidden;
+    top: 0px;
+    left: 0px;
+}
+
+#bg>img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.logo {
+    filter: drop-shadow(2px 2px 4px #333);
+}
+
+.logoname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.logoname>p {
+    margin: 10px;
+    color: white;
+    font-size: 50px;
+    filter: drop-shadow(2px 2px 4px #000000);
+}
+
+.forget {
+
+    display: flex;
+    height: 98vh;
+    width: 99vw;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.enter-email {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 44px 0px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid black;
+    padding: 50px 30px;
+}
+
+.enter-email .text-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-weight: 700;
+    color: #374151;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: nowrap;
+}
+
+.enter-email .div {
+    position: relative;
+    width: 270px;
+    font-weight: 500;
+    color: #9ca3af;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+.enter-email .group {
+    position: relative;
+    width: 329px;
+    height: 77.67px;
+}
+
+.enter-email .overlap {
+    position: relative;
+    height: 78px;
+}
+
+.enter-email .text-wrapper-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: nowrap;
+}
+
+.enter-email .overlap-group-wrapper {
+    position: absolute;
+    width: 329px;
+    height: 48px;
+    top: 30px;
+    left: 0;
+}
+
+.enter-email .overlap-group {
+    position: relative;
+    width: 327px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.enter-email .span {
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    line-height: 36px;
+}
+
+.enter-email .rectangle {
+    position: absolute;
+    width: 327px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #bec5d1;
+
+}
+
+.enter-email .divregistarion {
+    display: flex;
+    width: 256px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #32b768;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.inputname {
+    all: unset;
+    height: 100%;
+    width: 94%;
+    margin: 0 10px;
+}
+
+.submitbtn {
+    border: unset;
+    background-color: unset;
+    color: white;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.white {
+    position: absolute;
+    width: 950px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(5px);
+}

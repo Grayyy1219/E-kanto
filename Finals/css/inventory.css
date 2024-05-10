@@ -1,0 +1,122 @@
+#inventory-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#inventory-table th,
+#inventory-table td {
+    border: 1px solid #888;
+}
+
+#inventory-table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+#inventory-table tr:nth-child(even) {
+    background-color: #3d3c3c2d;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.adjust {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.adjust:hover {
+    background-color: #45a049;
+}
+
+.edit {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.update {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.delete {
+    padding: 10px;
+    cursor: pointer;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+#delete {
+    margin-top: 10px;
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
+}
+
+.Add {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+#Add {
+    margin-top: -40px;
+        display: flex;
+        gap: 20px;
+        position: relative;
+        left: 36vw;
+}
+
+.update:hover {
+    background-color: #45a049;
+}
+
+.quantity {
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+.quantity:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+}
+
+.pagination {
+    margin-top: -30px;
+    display: flex;
+    gap: 30px;
+    justify-content: flex-start;
+}
+
+.selected-page {
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="createcss.css">
+    <title>Edit Product</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Edit Product</h2>
+
+        <form id="edit-product-form" enctype="multipart/form-data">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product_name" required>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required></select>
+
+            <label for="item-image">Item Image:</label>
+            <input type="file" id="item-image" name="item_image" accept="image/*">
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <button type="button" onclick="saveChanges()">Save Changes</button>
+        </form>
+    </div>
+    <script>
+        // Fetch product details based on productId from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('productId');
+
+        // Fetch product details and categories
+        Promise.all([
+            fetch(`get_product_details.php?productId=${productId}`).then(response => response.json()),
+            fetch('get_categories.php').then(response => response.json())
+        ])
+            .then(([productDetails, categoriesData]) => {
+                // Populate the form fields with existing values
+                document.getElementById('product-name').value = productDetails.ItemName;
+
+                // Populate the category dropdown
+                const categoryDropdown = document.getElementById('category');
+                categoriesData.categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    option.textContent = category;
+                    categoryDropdown.appendChild(option);
+                });
+                document.getElementById('category').value = productDetails.Category;
+
+                document.getElementById('price').value = productDetails.Price;
+                document.getElementById('quantity').value = productDetails.Quantity;
+
+                // Set placeholders based on existing values
+                document.getElementById('product-name').placeholder = productDetails.ItemName;
+                document.getElementById('price').placeholder = productDetails.Price;
+                document.getElementById('quantity').placeholder = productDetails.Quantity;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error.message);
+            });
+
+
+        function saveChanges() {
+            const productId = getProductIdFromUrl();
+            const productName = document.getElementById('product-name').value;
+            const category = document.getElementById('category').value;
+            const itemImageInput = document.getElementById('item-image');
+            const price = document.getElementById('price').value;
+            const quantity = document.getElementById('quantity').value;
+
+            const formData = new FormData();
+            formData.append('productId', productId);
+            formData.append('productName', productName);
+            formData.append('category', category);
+            formData.append('price', price);
+            formData.append('quantity', quantity);
+            formData.append('itemImage', itemImageInput.files[0]);
+
+            // Example AJAX request using fetch API
+            // Example AJAX request using fetch API
+            fetch('http://localhost/E-kanto/update_product.php', {
+                method: 'POST',
+                body: formData, // Assuming formData is the FormData object containing your form data
+            })
+                .then(response => {
+                    console.log('Raw response:', response); // Add this line for debugging
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Update product response:', data);
+                    if (data.success) {
+                        alert('Changes saved successfully');
+                        // Redirect to Admin_Panel.php
+                        window.location.href = 'Admin_Panel.php';
+                    } else {
+                        alert('Error saving changess: ' + data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error saving changes:', error.message);
+                    alert('Error saving changesd: ' + error.message);
+                });
+
+            function getProductIdFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('productId');
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
