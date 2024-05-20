@@ -65,6 +65,10 @@ if ($result->num_rows > 0) {
                 <h1>E-Kanto</h1>
             </div>
             <nav class="navbar">
+            <form action="search.php" method="get" class="search-bar">
+                    <input type="text" name="query" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
                 <?php
                 if (isset($_SESSION["user_id"])) {
                     $user_id = $_SESSION["user_id"];
