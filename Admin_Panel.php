@@ -935,6 +935,23 @@
                 </script>
                 <!-- ... (existing content) -->
             </section>
+            
+            <section id="discount-management">
+    <h2>Discount Management</h2>
+
+    <div id="discount-form-container">
+        <h3>Create New Discount Code</h3>
+        <input type="text" id="discount-code-input" placeholder="Enter discount code">
+        <input type="number" id="discount-percentage-input" placeholder="Enter discount percentage" min="1" max="100">
+        <label for="discount-active-checkbox">Active</label>
+        <input type="checkbox" id="discount-active-checkbox" checked>
+        <button id="create-discount-button" onclick="handleCreateDiscount()">Create Discount Code</button>
+    </div>
+
+    <h3>Existing Discount Codes</h3>
+    <div id="discounts-container"></div>
+</section>
+
 
             <section id="reports">
                 <h1>Fast Moving items</h1>

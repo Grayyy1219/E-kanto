@@ -455,3 +455,34 @@ footer {
 }
 
 /* Add other styles as needed */
+/* Add this CSS to your existing stylesheet or create a new CSS file */
+
+/* Style for the order history table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style for table header */
+thead th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style for table rows */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style for table data cells */
+td {
+    padding: 10px;
+}
+
+/* Style for the message when no orders are found */
+td[colspan='4'] {
+    text-align: center;
+    font-style: italic;
+}

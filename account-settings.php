@@ -104,7 +104,44 @@ if ($result) {
 
             <button type="submit">Update Account Information</button>
         </form>
+        <h3>Order History</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        // Retrieve user's orders from the database
+        $customer_id = $_SESSION["user_id"]; // Assuming the customer_id is stored in the session
+        $query = "SELECT * FROM orders WHERE customer_id = $customer_id ORDER BY order_date DESC";
+        $result = mysqli_query($conn, $query);
+
+        // Check if there are any orders
+        if (mysqli_num_rows($result) > 0) {
+            // Loop through each order and display its details
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>";
+                echo "<td>" . $row['order_id'] . "</td>";
+                echo "<td>" . $row['order_date'] . "</td>";
+                echo "<td>" . $row['order_quantity'] . "</td>";
+                echo "<td>" . $row['total_amount'] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            // Display a message if no orders found
+            echo "<tr><td colspan='4'>No orders found.</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
     </div>
+   
+
 </body>
 
 </html>
